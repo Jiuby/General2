@@ -1,0 +1,26 @@
+IDENTIFICATION DIVISION.
+PROGRAM-ID. COUNT-ONES.
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+01 COUNT PIC 9(9).
+01 N PIC 9(9).
+01 M PIC 9(9).
+01 I PIC 9(9).
+01 J PIC 9(9).
+PROCEDURE DIVISION.
+MAIN-PROCEDURE.
+DISPLAY "Enter the size of the matrix: ".
+ACCEPT N.
+COMPUTE M = N * N.
+DO I = 1 TO M.
+DISPLAY "Enter the element at row " I ", column " I " : ".
+ACCEPT M(I).
+END-DO.
+COMPUTE COUNT = 0.
+DO I = 1 TO M.
+DO J = 1 TO M.
+IF M(I,J) = 1 THEN COMPUTE COUNT = COUNT + 1.
+END-DO.
+END-DO.
+DISPLAY "The number of ones in the matrix is " COUNT.
+STOP RUN.

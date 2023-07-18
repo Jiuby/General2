@@ -1,0 +1,31 @@
+// Import the Sass library.
+@import compass;
+
+// Define the main function.
+@function count-ones($n) {
+  $count: 0;
+
+  for ($i = 1; $i <= $n; $i++) {
+    for ($j = 1; $j <= $n; $j++) {
+      if ($i == $j) {
+        $count++;
+      }
+    }
+  }
+
+  return $count;
+}
+
+// Define the main Sass file.
+$n: 5;
+
+// Print the number of ones in the matrix.
+.count-ones {
+  @include count-ones($n);
+  font-size: 10px;
+}
+
+// Output the Sass file.
+.count-ones {
+  font-size: 10px;
+}
