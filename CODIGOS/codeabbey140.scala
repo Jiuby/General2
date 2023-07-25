@@ -1,16 +1,18 @@
-fun countOnes(n: Int): Int {
+def countOnes(n: Int): Int = {
   var count = 0
-  for (i in 1..n) {
-    for (j in 1..n) {
+  for (i <- 1 to n) {
+    for (j <- 1 to n) {
       if (i == j) {
-        count++
+        count += 1
       }
     }
   }
-  return count
+  count
 }
 
-fun main(args: Array<String>) {
-  val n = readLine()!!.toInt()
-  println(countOnes(n))
+object Main {
+  def main(args: Array[String]): Unit = {
+    val n = readLine().toInt
+    println(countOnes(n))
+  }
 }
